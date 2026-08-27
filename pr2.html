@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Lab Program 1</title>
+    <link rel='stylesheet' type='text/css' href='layout1.css'>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+
+    <style>
+        .menu {
+            margin-top: 11px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #000;
+            display: none; /* Initially hidden */
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class='bgcontainer'>
+    <div class='container'>
+        <img src='0.jpg' style='width:990px;height:150px'>
+    </div>
+   
+    <div class='maincontent1'><br />
+        <div class="question"> 
+        <p >Lab Program 2:<br>Develop and demonstrate a XHTML file that includes Javascript script for the following problems:   <br>
+        
+     a) Input : A number n obtained using prompt Output : The first n Fibonacci numbers<br>
+            b) Input : A number n obtained using prompt Output : A table of numbers from 1 to n and their squares using alert</p>
+            
+        </div>
+        
+        <p>Solution:</p>
+        <pre id="codeBlock" style="font-size: 12px;"></pre>
+    </div>
+
+    <!-- Added Button -->
+    <button onclick="showResult()">Show Result</button>
+
+    <!-- Added Result Div -->
+    <div class="result" id="resultDiv">
+        <p>Here is the result content!</p>
+        <div id="outputContainer"></div> <!-- Container to hold the iframe -->
+    </div>
+
+    <div class='footer'>
+        <span style='margin-left: 14px;'>CopyRight</span>
+        <span style='float:right;margin-right: 14px;'>Design by Akshay S(MCA)</span>
+    </div>
+</div>
+
+<script>
+    let htmlCode = `
+<html>
+<head>
+    <title>Fibonancci</title>
+    <script language="javascript">
+    var a = 0, b = 1, c,i;
+    var n = prompt("Enter valid input:");
+    if (n != null && n > 0)
+    {
+        document.write("fibonacci seris:<br>")
+        if (n == 1)
+        {
+            document.write(a);
+        }
+        else {
+                document.write(a+"<br>" +b+"<br>");
+                for (i = 3; i <= n; i++)
+                {
+                    c = a + b;
+                    document.write(c+"<br> ");
+                    a=b;
+                    b=c; 
+                }
+             
+             }
+    }else{
+        document.write("Enter a valid input");
+    }
+    document.write("SQUARE NUMBERS FROM " + 1 + " TO " + n + " are <br>");
+    document.write("NUMBERS"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+"SQUARES<br>");
+for (i=1;i<=n;i++)
+{
+	var square=i*i;
+    document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+i+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+square+' '+"<br>");
+}
+<\/script>
+</head>
+</html>`;
+
+    document.getElementById("codeBlock").innerText = htmlCode;
+
+    function showResult() {
+        var resultDiv = document.getElementById("resultDiv");
+        resultDiv.style.display = "block"; // Show the result div
+
+        let outputContainer = document.getElementById("outputContainer");
+        outputContainer.innerHTML = ""; // Clear previous content
+
+        let iframe = document.createElement("iframe");
+        outputContainer.appendChild(iframe);
+
+        let doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(htmlCode);
+        doc.close();
+    }
+</script>
+
+</body>
+</html>

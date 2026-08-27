@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Lab Program 1</title>
+    <link rel='stylesheet' type='text/css' href='layout1.css'>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+    <style>
+        #videoContainer {
+            display: none;
+            position: fixed;
+            width: 400px;
+            height: 300px;
+            background: black;
+            top: 100px;
+            left: 100px;
+            z-index: 1000;
+            border: 2px solid white;
+            padding: 5px;
+        }
+        #videoContainer video {
+            width: 100%;
+            height: 100%;
+        }
+        #closeBtn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class='bgcontainer'>
+    <div class="button">
+        <button onclick="showResult()">Show Result</button>
+        <button onclick="openVideo()">Video</button>
+        <button onclick="window.location.href = 'home.html'">Back</button>
+    </div>
+</div>
+
+<div id="videoContainer">
+    <button id="closeBtn" onclick="removeVideoContainer(); event.stopPropagation();">X</button>
+    <video controls>
+        <source src="p2v.mp4" type="video/mp4">
+    </video>
+</div>
+
+<script>
+    function openVideo() {
+        let videoDiv = document.getElementById('videoContainer');
+        videoDiv.style.display = 'block';
+        makeDraggable(videoDiv);
+    }
+
+    function removeVideoContainer() {
+        console.log("Close button clicked"); // Debugging output
+        let videoDiv = document.getElementById('videoContainer');
+        if (videoDiv) {
+            videoDiv.remove();
+        }
+    }
+
+    function makeDraggable(element) {
+        let offsetX, offsetY, isDragging = false;
+
+        element.onmousedown = function(event) {
+            isDragging = true;
+            offsetX = event.clientX - element.offsetLeft;
+            offsetY = event.clientY - element.offsetTop;
+        };
+
+        document.onmousemove = function(event) {
+            if (isDragging) {
+                element.style.left = event.clientX - offsetX + 'px';
+                element.style.top = event.clientY - offsetY + 'px';
+            }
+        };
+
+        document.onmouseup = function() {
+            isDragging = false;
+        };
+    }
+</script>
+</body>
+</html>

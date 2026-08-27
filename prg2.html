@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Lab Program 2</title>
+    <link rel='stylesheet' type='text/css' href='layout1.css'>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+   
+</head>
+<body>
+<div class='bgcontainer'>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.jpeg" alt="College Logo">
+        </div>
+        <div class="name">
+            <h1>Vidya Vikas Institute of Engineering and Technology</h1>
+            <h3>Master of Computer Application</h3>
+            <h3>Web Technology-MMC106</h3>
+            <h2>Digitalise Web Technology Manual</h2>
+        </div>
+    </div>
+    
+    <div class='maincontent1'><br />
+        <div class="question"> 
+            <p>Lab Program 2:<br>Develop and demonstrate a XHTML file that includes Javascript script for the following problems:   <br>
+            a) Fibonacci numbers<br>
+            b) Table of numbers and their squares</p>
+        </div>
+        
+        <p>Solution:</p>
+        <textarea id="codeEditor"></textarea>
+    </div>
+
+    <div class="button">
+        <button onclick="showResult()">Show Result</button>
+        <button onclick="openVideo()">Video</button>
+        <button onclick="window.location.href = 'home.html'">Back</button>
+    </div>
+    <div class="result" id="resultDiv">
+        <p>Output:</p>
+        <div id="outputContainer"></div>
+    </div>
+    <div id="videoContainer">
+        <button id="closeBtn" onclick="hideVideoContainer(); event.stopPropagation();">X</button>
+        <video id="videoElement" controls>
+            <source src="prgm2.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class='footer'>
+        <span style='margin-left: 14px;'>CopyRight</span>
+        <span style='float:right;margin-right: 14px;'>Design by Akshay S(MCA)</span>
+    </div>
+</div>
+
+<script>
+    let htmlCode = `<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci</title>
+    <script>
+    var a = 0, b = 1, c, i;
+    var n = prompt("Enter a number:");
+    if (n != null && n > 0) {
+        document.write("Fibonacci Series:<br>");
+        if (n == 1) {
+            document.write(a);
+        } else {
+            document.write(a + "<br>" + b + "<br>");
+            for (i = 3; i <= n; i++) {
+                c = a + b;
+                document.write(c + "<br>");
+                a = b;
+                b = c;
+            }
+        }
+    } else {
+        document.write("Enter a valid input");
+    }
+    document.write("<br>Numbers and their squares:<br>");
+    for (i = 1; i <= n; i++) {
+        document.write(i + "² = " + (i * i) + "<br>");
+    }
+    <\/script>
+</head>
+</html>`;
+
+    document.getElementById("codeEditor").value = htmlCode;
+
+    function showResult() {
+        var code = document.getElementById("codeEditor").value;
+        var resultDiv = document.getElementById("resultDiv");
+        resultDiv.style.display = "block";
+
+        let outputContainer = document.getElementById("outputContainer");
+        outputContainer.innerHTML = "";
+
+        let iframe = document.createElement("iframe");
+        outputContainer.appendChild(iframe);
+
+        let doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(code);
+        doc.close();
+    }
+    //video
+    function openVideo() {
+        let videoDiv = document.getElementById('videoContainer');
+        let video = document.getElementById('videoElement');
+
+        // Ensure the container is added back if removed
+        if (!document.body.contains(videoDiv)) {
+            document.body.appendChild(videoDiv);
+        }
+        
+        videoDiv.style.display = 'block';
+        video.pause();
+        video.load();
+        video.play();
+
+        makeDraggable(videoDiv);
+    }
+
+    function hideVideoContainer() {
+        console.log("Close button clicked"); // Debugging output
+        let videoDiv = document.getElementById('videoContainer');
+        let video = document.getElementById('videoElement');
+        if (videoDiv) {
+            video.pause(); // Pause the video
+            videoDiv.style.display = 'none'; // Hide instead of removing
+        }
+    }
+
+    function makeDraggable(element) {
+        let offsetX, offsetY, isDragging = false;
+
+        element.onmousedown = function(event) {
+            isDragging = true;
+            offsetX = event.clientX - element.offsetLeft;
+            offsetY = event.clientY - element.offsetTop;
+        };
+
+        document.onmousemove = function(event) {
+            if (isDragging) {
+                element.style.left = event.clientX - offsetX + 'px';
+                element.style.top = event.clientY - offsetY + 'px';
+            }
+        };
+
+        document.onmouseup = function() {
+            isDragging = false;
+        };
+    }
+</script>
+</body>
+</html>

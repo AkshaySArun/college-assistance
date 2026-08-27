@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Lab Program 1</title>
+    <link rel='stylesheet' type='text/css' href='layout1.css'>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+
+    <style>
+        .menu {
+            margin-top: 11px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #000;
+            display: none; /* Initially hidden */
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class='bgcontainer'>
+    <div class='container'>
+        <img src='0.jpg' style='width:990px;height:150px'>
+    </div>
+   
+    <div class='maincontent1'><br />
+        <div class="question"> 
+        <p>Lab Program 4:<br>Develop, test and validate an XHTML document that has checkboxes for apple (59 cents each), orange (49 cents 
+            each), and banana (39 cents each) along with submit button. Each check boxes should have its own onclick 
+            event handler. These handlers must add the cost of their fruit to a total cost. An event handler for the submit
+            Button must produce an alert Window With the message your total cost is $xxx;where xxx is the total cost
+            of the chosen fruit including 5 percent sales . This angler must return false (to avoid actual submission
+             of a form data). Modify the document to accept quantity for each item using textboxes.</p>
+        
+        </div>
+        <p>Solution:</p>
+        <pre id="codeBlock"></pre>
+    </div>
+
+    <!-- Added Button -->
+    <button onclick="showResult()">Show Result</button>
+
+    <!-- Added Result Div -->
+    <div class="result" id="resultDiv">
+        <p>Here is the result content!</p>
+        <div id="outputContainer"></div> <!-- Container to hold the iframe -->
+    </div>
+
+    <div class='footer'>
+        <span style='margin-left: 14px;'>CopyRight</span>
+        <span style='float:right;margin-right: 14px;'>Design by Akshay S(MCA)</span>
+    </div>
+</div>
+
+<script>
+    let htmlCode = `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>program 4</title>
+</head>
+<body>
+<table>
+<tr>
+<td><input type="checkbox" id='apple' onclick="calapple()"/>Apple(59 cents)</td>
+<td>Quantity<input type="number" id="apple_qty"/></td>
+</tr>
+
+<tr>
+<td><input type="checkbox" id='orange' onclick="calorange()"/>Orange(49 cents)</td>
+<td>Quantity<input type="number" id="orange_qty"/></td>
+</tr>
+
+<tr>
+<td><input type="checkbox" id='banana' onclick="calbanana()"/>Banana(39 cents)</td>
+<td>Quantity<input type="number" id="banana_qty"/></td>
+</tr>
+
+<tr>
+<td><input type="button" value="Submit" onclick="disp()"/></td>
+</tr>
+
+</table>
+<script type="text/javascript">
+    var applecost = 0;
+    var orangecost = 0;
+    var bananacost = 0;
+    function calapple() {
+        var checked = document.getElementById("apple").checked;
+        if (checked) {
+            applecost = 0.59 * parseFloat(document.getElementById("apple_qty").value);
+        } else {
+            applecost = 0;
+        }
+        console.log(applecost);
+    }
+    function calorange() {
+        var checked = document.getElementById("orange").checked;
+        if (checked) {
+            orangecost = 0.49 * parseFloat(document.getElementById("orange_qty").value);
+        } else {
+            orangecost = 0;
+        }
+        console.log(orangecost);
+    }
+    function calbanana() {
+        var checked = document.getElementById("banana").checked;
+        if (checked) {
+            bananacost = 0.39 * parseFloat(document.getElementById("banana_qty").value);
+        } else {
+            bananacost = 0;
+        }
+        console.log(bananacost);
+    }
+    function disp() {
+        calapple();
+        calorange();
+        calbanana();
+        alert("your total cost is $" + ((applecost+orangecost+bananacost)*1.05)  );
+    }
+
+<\/script>
+</body>
+</html>
+`;
+
+    document.getElementById("codeBlock").innerText = htmlCode;
+
+    function showResult() {
+        var resultDiv = document.getElementById("resultDiv");
+        resultDiv.style.display = "block"; // Show the result div
+
+        let outputContainer = document.getElementById("outputContainer");
+        outputContainer.innerHTML = ""; // Clear previous content
+
+        let iframe = document.createElement("iframe");
+        outputContainer.appendChild(iframe);
+
+        let doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(htmlCode);
+        doc.close();
+    }
+</script>
+
+</body>
+</html>

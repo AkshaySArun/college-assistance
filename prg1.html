@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Lab Program 1</title>
+    <link rel='stylesheet' type='text/css' href='layout1.css'>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+   
+</head>
+<body>
+<div class='bgcontainer'>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.jpeg" alt="College Logo">
+        </div>
+        <div class="name">
+            <h1>Vidya Vikas Institute of Engineering and Technology</h1>
+            <h3>Master of Computer Application</h3>
+            <h3>Web Technology-MMC106</h3>
+            <h2>Digitalise Web Technology Manual</h2>
+        </div>
+    </div>
+    
+    <div class='maincontent1'><br />
+        <div class="question"> 
+            <p>Lab Program 1: Create an XHTML page that provides information about your department. Your XHTML page must use the
+                following tags:</p>
+                <ul>
+                    <li>Text Formatting tags</li>
+                    <li>Horizontal rule</li>
+                    <li>Meta element</li>
+                    <li>Links</li>
+                    <li>Images</li>
+                    <li>Tables (Use of additional tags encouraged)</li>
+                </ul>
+        </div>
+        
+        <p>Solution:</p>
+        <textarea id="codeEditor"></textarea>
+    </div>
+
+    <div class="button">
+        <button onclick="showResult()">Show Result</button>
+        <button >Video</button>
+        <button onclick="window.location.href = 'home.html'">Back</button>
+    </div>
+    <div class="result" id="resultDiv">
+        <p>Output:</p>
+        <div id="outputContainer"></div>
+    </div>
+    <div class='footer'>
+        <span style='margin-left: 14px;'>CopyRight</span>
+        <span style='float:right;margin-right: 14px;'>Design by Akshay S(MCA)</span>
+    </div>
+</div>
+
+<script>
+    let htmlCode = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta name="viewpoint" content="width=width-device" />
+    <title>PROGRAM 1</title>
+</head>
+<body>
+    <center>
+    <img src="logo.jpeg" height="250px" width="250px" />
+    
+    <h1>VIDYA VIKAS COLLEGE</h1>
+    
+    <table border=1>
+    <tr style="background-color:Green;font-size:25px;">
+    <th>sl.no</th>
+    <th>Name of faculty</th>
+    <th>Designation</th>
+    </tr>
+    <tr>
+    <td>1</td>
+    <td>Raghavendra</td>
+    <td>Asst Professor</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>Parimal Kumar</td>
+    <td>Asst Professor</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>Sandeep N K</td>
+    <td>Asst Professor</td>
+    </tr>
+    </table>
+    <br />
+    <br />
+    <br />
+    to Know more about VVIET <a href="www.vidyavikas.com" >click here</a>
+    </center>
+</body>
+</html>
+`;
+
+    document.getElementById("codeEditor").value = htmlCode;
+
+    function showResult() {
+        var code = document.getElementById("codeEditor").value;
+        var resultDiv = document.getElementById("resultDiv");
+        resultDiv.style.display = "block";
+
+        let outputContainer = document.getElementById("outputContainer");
+        outputContainer.innerHTML = "";
+
+        let iframe = document.createElement("iframe");
+        outputContainer.appendChild(iframe);
+
+        let doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(code);
+        doc.close();
+    }
+</script>
+</body>
+</html>

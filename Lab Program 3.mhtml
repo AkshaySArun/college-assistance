@@ -1,0 +1,360 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: file:///E:/DLM5/prg3.html
+Subject: Lab Program 3
+Date: Mon, 31 Mar 2025 11:46:56 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--rtTepnv9TWyDU0fbzEb6xbgtRQ1tSy99bbE4NRkbMF----"
+
+
+------MultipartBoundary--rtTepnv9TWyDU0fbzEb6xbgtRQ1tSy99bbE4NRkbMF----
+Content-Type: text/html
+Content-ID: <frame-496E9FBC89B7B596AA72B3728F8AB26A@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/DLM5/prg3.html
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8">
+   =20
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Lab Program 3</title>
+    <link rel=3D"stylesheet" type=3D"text/css" href=3D"file:///E:/DLM5/layo=
+ut1.css">
+    <link rel=3D"stylesheet" type=3D"text/css" href=3D"file:///E:/DLM5/css/=
+bootstrap.min.css">
+  =20
+</head>
+<body>
+<div class=3D"bgcontainer">
+    <div class=3D"container">
+        <div class=3D"logo">
+            <img src=3D"file:///E:/DLM5/logo.jpeg" alt=3D"College Logo">
+        </div>
+        <div class=3D"name">
+            <h1>Vidya Vikas Institute of Engineering and Technology</h1>
+            <h3>Master of Computer Application</h3>
+            <h3>Web Technology-MMC106</h3>
+            <h2>Digitalise Web Technology Manual</h2>
+        </div>
+    </div>
+   =20
+    <div class=3D"maincontent1"><br>
+        <div class=3D"question">=20
+            <p>Lab Program 3:<br>Develop and demonstrate, using JavaScript =
+script, a XHTML document that contains three short paragraphs of=20
+                text, stacked on top of each other, with only enough of eac=
+h showing so that the mouse cursor can be placed over=20
+                some part of them. When the cursor is placed over the expos=
+ed part of any paragraph, it should rise to the top to=20
+                become completely visible. Modify the above document so tha=
+t when a text is moved from the top stacking=20
+                position, it returns to its original position rather than t=
+o the bottom </p>
+        </div>
+       =20
+        <p>Solution:</p>
+        <textarea id=3D"codeEditor" style=3D"height: 434px; width: 1100px;"=
+></textarea>
+    </div>
+
+    <div class=3D"button">
+        <button>Show Result</button>
+        <button>Video</button>
+        <button>Back</button>
+    </div>
+    <div class=3D"result" id=3D"resultDiv" style=3D"display: block;">
+        <p>Output:</p>
+        <div id=3D"outputContainer"><iframe></iframe></div>
+    </div>
+    <div id=3D"videoContainer">
+        <button id=3D"closeBtn">X</button>
+        <video id=3D"videoElement" controls=3D"">
+            <source src=3D"file:///E:/DLM5/prgm3.mp4" type=3D"video/mp4">
+        </video>
+    </div>
+    <div class=3D"footer">
+        <span style=3D"margin-left: 14px;">CopyRight</span>
+        <span style=3D"float:right;margin-right: 14px;">Design by Akshay S(=
+MCA)</span>
+    </div>
+</div>
+
+
+
+
+</body></html>
+------MultipartBoundary--rtTepnv9TWyDU0fbzEb6xbgtRQ1tSy99bbE4NRkbMF----
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: file:///E:/DLM5/logo.jpeg
+
+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
+
+------MultipartBoundary--rtTepnv9TWyDU0fbzEb6xbgtRQ1tSy99bbE4NRkbMF----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/DLM5/css/bootstrap.min.css
+
+@charset "utf-8";
+=0A
+------MultipartBoundary--rtTepnv9TWyDU0fbzEb6xbgtRQ1tSy99bbE4NRkbMF----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/DLM5/layout1.css
+
+@charset "utf-8";
+
+body { font-family: Arial, sans-serif; margin: 0px; padding: 0px; backgroun=
+d: rgb(244, 244, 244); width: auto; }
+
+.bgcontainer { max-width: 1200px; margin: 0px auto; background: white; }
+
+.navigation { background: rgb(51, 51, 51); padding: 10px 0px; text-align: c=
+enter; }
+
+.navigation ul { list-style: none; padding: 0px; }
+
+.navigation ul li { display: inline; margin: 0px 15px; }
+
+.navigation ul li a { text-decoration: none; color: rgb(255, 255, 255); fon=
+t-size: 18px; padding: 8px 12px; transition: 0.3s; }
+
+.navigation ul li a:hover, .navigation ul li a.active { background: rgb(255=
+, 152, 0); border-radius: 4px; }
+
+.maincontent { padding: 20px; background: rgb(255, 255, 255); height: 300px=
+; display: flex; align-items: flex-start; }
+
+.maincontent1 { border-top: 10px solid rgb(51, 51, 51); }
+
+.middlecontent { background: rgb(241, 241, 241); padding: 20px; border-radi=
+us: 5px; height: 255px; flex-grow: 1; }
+
+.middlecontent1 { background: rgb(241, 241, 241); padding: 20px; margin: 20=
+px; border-radius: 5px; height: auto; flex-grow: 1; }
+
+.leftsidebar { width: 180px; height: 260px; float: left; background: rgb(22=
+1, 221, 221); padding: 15px; margin-right: 20px; border-radius: 5px; }
+
+.rightsidebar { width: 250px; float: right; background: rgb(221, 221, 221);=
+ padding: 15px; border-radius: 5px; }
+
+.footer { background: rgb(51, 51, 51); color: white; text-align: center; pa=
+dding: 10px 0px; margin-top: 20px; }
+
+.question { padding: 20px; }
+
+.menu { margin-top: 11px; }
+
+.container { display: flex; align-items: center; justify-content: center; t=
+ext-align: center; padding: 20px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10=
+px; }
+
+.logo { display: flex; align-items: center; margin-right: 15px; }
+
+.logo img { width: 150px; height: 150px; }
+
+.name { text-align: center; }
+
+.name h1 { color: rgb(21, 102, 189); }
+
+.name h2 { color: rgb(30, 177, 185); }
+
+.name h2, .name h3, .name h4 { margin: 5px 0px; }
+
+textarea { width: 93%; height: 400px; font-family: "Times New Roman", Times=
+, serif; font-size: 2cap; margin: 20px; padding: 15px; border: 2px solid rg=
+b(0, 0, 0); }
+
+.menu { margin-top: 11px; }
+
+.result { margin: 20px; padding: 10px; border: 2px solid rgb(0, 0, 0); font=
+-family: "Times New Roman", Times, serif; font-size: 2cap; display: none; }
+
+iframe { width: 100%; height: 300px; border: none; font-family: "Times New =
+Roman", Times, serif; }
+
+.question { font-family: "Times New Roman", Times, serif; font-size: 2cap; =
+padding: 15px; }
+
+#resultdiv { font-family: "Times New Roman", Times, serif; font-size: 2cap;=
+ }
+
+.button { display: flex; gap: 25px; justify-content: center; align-items: c=
+enter; margin-top: 20px; }
+
+.button button { padding: 10px; font-size: 16px; background: rgb(51, 51, 51=
+); color: white; border: none; border-radius: 5px; cursor: pointer; transit=
+ion: background 0.3s; }
+
+.button button:hover { background: rgb(255, 152, 0); }
+
+.leftsidebar ul { list-style: none; padding: 0px; }
+
+.leftsidebar li { margin-bottom: 10px; }
+
+.leftsidebar button { width: 100%; padding: 10px; font-size: 16px; backgrou=
+nd: rgb(51, 51, 51); color: white; border: none; border-radius: 5px; cursor=
+: pointer; transition: background 0.3s; }
+
+.leftsidebar button:hover { background: rgb(255, 152, 0); }
+
+#videoContainer { display: none; position: fixed; width: 400px; height: 300=
+px; background: black; top: 100px; left: 100px; z-index: 1000; border: 2px =
+solid white; padding: 5px; }
+
+#videoContainer video { width: 100%; height: 100%; }
+
+#closeBtn { top: 5px; right: 5px; background: red; color: white; border: no=
+ne; cursor: pointer; padding: 5px; }
+------MultipartBoundary--rtTepnv9TWyDU0fbzEb6xbgtRQ1tSy99bbE4NRkbMF----
+Content-Type: text/html
+Content-ID: <frame-2FD22ABD09D344ED8AFC7A2F65AD1309@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///E:/DLM5/prg3.html
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D=
+"cid:css-b2ed91c4-453d-449e-8050-1f5eb0ac156d@mhtml.blink" />
+    <title>program-3</title>
+   =20
+</head>
+<body>
+<p id=3D"p3" class=3D"paragraph1" style=3D"z-index: 1;">This is third page<=
+/p>
+<p id=3D"p2" class=3D"paragraph1" style=3D"z-index: 1;">This is second page=
+</p>
+<p id=3D"p1" class=3D"paragraph1" style=3D"z-index: 1;">This is first page<=
+/p>
+
+
+</body></html>
+------MultipartBoundary--rtTepnv9TWyDU0fbzEb6xbgtRQ1tSy99bbE4NRkbMF----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-b2ed91c4-453d-449e-8050-1f5eb0ac156d@mhtml.blink
+
+@charset "utf-8";
+
+.paragraph1 { width: 100px; height: 100px; border: thick solid black; paddi=
+ng: 10px; position: absolute; z-index: 0; }
+
+#p1 { background-color: lime; text-align: center; top: 100px; left: 200px; =
+}
+
+#p2 { background-color: navy; text-align: center; color: white; top: 120px;=
+ left: 220px; }
+
+#p3 { background-color: fuchsia; text-align: center; top: 140px; left: 240p=
+x; }
+------MultipartBoundary--rtTepnv9TWyDU0fbzEb6xbgtRQ1tSy99bbE4NRkbMF------

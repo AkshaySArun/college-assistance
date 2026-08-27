@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Registration</title>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' type='text/css' href='layout1.css'>
+    <script type='text/javascript'>
+    function validation()
+    {
+    var names=document.getElementById('names');
+    var email=document.form_name.email;
+    var pwd=document.form_name.password;
+    if(names.value==0)
+    {
+    alert('Enter username');
+    names.focus();
+    return false;
+    }
+    if(email.value<1)
+    {
+    alert('Enter Email');
+    email.focus();
+    return false;
+    }
+    if(pwd.value==0)
+    {
+    alert('Enter password');
+    pwd.focus();
+    return false;
+    }
+    return true;
+    
+    }
+    </script>
+    <style>
+    .btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn-primary:hover{
+color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+
+}
+.btn-primary:active{
+background-image: none;
+}
+    </style>
+    </head>
+<body>
+<div class='bgcontainer'>
+  <div class="container">
+    <div class="logo">
+        <img src="logo.jpeg" alt="College Logo">
+    </div>
+    <div class="name">
+        <h1>Vidya Vikas Institute of Engineering and Technology</h1>
+        <h3>Master of Computer Application</h3>
+        <h3>Web Technology-MMC106</h3>
+        <h2>Digitalise Web Technology Manual</h2>
+    </div>
+</div>
+   <div class='menu'>
+        <div class='navigation'>
+            <ul>
+                <li><a href='home.html' >Home</a></li>|
+                <li><a href='about.html'>About_Us</a></li>|
+                <li><a href='gall.html'>Gallery</a></li>|
+                <li><a href='reg.html'class='active'>Registration</a></li>|
+                <li><a href='contact.html'>Contact_Us</a></li>
+            </ul>
+   
+      </div>
+    </div>
+    <div class='maincontent'><br />
+               <!--<div class='leftsidebar'>
+               <ul>
+         <li class='side'><a href='Document1.pdf' target='_blank'>2025 Batch</a></li>
+        <li class='side'><a href='prg1.html'>Program 1</a></li>
+         <li class='side'><a href='prg2.html'>Program 2</a></li>
+         <li class='side'><a href='prg3.html'>Program 3</a></li>
+         <li class='side'><a href='prg4.html'>Program 4</a></li> </ul>
+               </div>-->
+               <div class='middlecontent'>Registartion>>
+               <div class='middle_form'>
+               <form action='insert.php' method='post' onsubmit='return validation()' name='form_name'>
+               <table>
+               <tr><td>Name</td><td><input type='text' name='name' id='names'></td></tr>
+               <tr><td>Email</td><td><input type='text' name='email' ></td></tr>
+               <tr><td>Password</td><td><input type='password' name='password' ></td></tr>
+                         
+               </table>
+               <tr><td>
+             <input type='submit'  value='Submit' style='margin-left: 78px;' name='login'>
+              
+               </td><td>
+               <tr><td><a href='login.php' style='font-size:12px;margin-top:4px;'>Already have an account? Login</a></td></tr>
+               </form>
+               </div>
+               
+               </div>
+               
+    </div>
+<div class='footer'>
+<span style='margin-left: 14px;'>CopyRight</span><span style='float:right;margin-right: 14px;'>Design by Akshay S(MCA)</span>
+</div>
+ </div>
+     </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Lab Program 1</title>
+    <link rel='stylesheet' type='text/css' href='layout1.css'>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+
+    <style>
+        .menu {
+            margin-top: 11px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #000;
+            display: none; /* Initially hidden */
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class='bgcontainer'>
+    <div class='container'>
+        <img src='0.jpg' style='width:990px;height:150px'>
+    </div>
+   
+    <div class='maincontent1'><br />
+        <div class="question"> 
+        <p>Lab Program 3:<br>Develop and demonstrate, using JavaScript script, a XHTML document that contains three short paragraphs of 
+            text, stacked on top of each other, with only enough of each showing so that the mouse cursor can be placed over 
+            some part of them. When the cursor is placed over the exposed part of any paragraph, it should rise to the top to 
+            become completely visible. Modify the above document so that when a text is moved from the top stacking 
+            position, it returns to its original position rather than to the bottom </p>
+       
+        </div>
+        <p>Solution:</p>
+        <pre id="codeBlock"></pre>
+    </div>
+
+    <!-- Added Button -->
+    <button onclick="showResult()">Show Result</button>
+
+    <!-- Added Result Div -->
+    <div class="result" id="resultDiv">
+        <p>Here is the result content!</p>
+        <div id="outputContainer"></div> <!-- Container to hold the iframe -->
+    </div>
+
+    <div class='footer'>
+        <span style='margin-left: 14px;'>CopyRight</span>
+        <span style='float:right;margin-right: 14px;'>Design by Akshay S(MCA)</span>
+    </div>
+</div>
+
+<script>
+    let htmlCode = `
+<html>
+<head>
+    <title>program-3</title>
+    <style type=text/css>
+        
+    .paragraph1
+    {
+        width:100px;
+        height:100px;
+        border:solid thick black;
+        padding:10px;
+        position:absolute;
+        z-Index:0;
+        }
+    #p1
+    {
+        background-color:lime;
+        text-align:center;
+        top:100px;
+        left:100px;
+        }
+     #p2
+    {
+        background-color:navy;
+        text-align:center;
+        color:White;
+        top:120px;
+        left:120px;
+        
+        }
+      #p3
+     {
+        background-color:Fuchsia;
+        text-align:center;
+        top:130px;
+        left:130px;
+        }  
+    </style>
+
+</head>
+<body>
+<p id=p2 class="paragraph1" onmouseover="mover(p2);">This is second page</p>
+<p id=p3 class="paragraph1" onmouseover="mover(p3);">This is third page</p>
+<p id=p1 class="paragraph1" onmouseover="mover(p1);">This is first page</p>
+<script type="text/javascript">
+    var TopLayer = document.getElementById("p1");
+    function mover(Top) {
+        TopLayer.style.zIndex = "0";
+        Top.style.zIndex = "1";
+        TopLayer = Top;
+    }
+<\/script>
+
+</body>
+</html>
+`;
+
+    document.getElementById("codeBlock").innerText = htmlCode;
+
+    function showResult() {
+        var resultDiv = document.getElementById("resultDiv");
+        resultDiv.style.display = "block"; // Show the result div
+
+        let outputContainer = document.getElementById("outputContainer");
+        outputContainer.innerHTML = ""; // Clear previous content
+
+        let iframe = document.createElement("iframe");
+        outputContainer.appendChild(iframe);
+
+        let doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(htmlCode);
+        doc.close();
+    }
+</script>
+
+</body>
+</html>
